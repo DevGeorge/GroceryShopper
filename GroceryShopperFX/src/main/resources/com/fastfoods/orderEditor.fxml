@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fastfoods.OrderEditorController">
+    <children>
+        <VBox alignment="CENTER" prefHeight="640.0" prefWidth="1240.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="271.0" text="Orders">
+                    <font>
+                        <Font size="35.0" />
+                    </font>
+                </Label>
+                <HBox prefHeight="481.0" prefWidth="743.0">
+                    <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="472.0" prefWidth="307.0" spacing="5.0">
+                            <children>
+                                <TextField fx:id="searchField" promptText="Search Field">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0" top="5.0" />
+                                    </VBox.margin>
+                                </TextField>
+                                <HBox alignment="CENTER" prefHeight="51.0" prefWidth="285.0" spacing="20.0">
+                                    <children>
+                                        <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchItemOnAction" text="Search" />
+                                        <Button fx:id="resetTable" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#updateTable" text="Reset Table" />
+                                    </children>
+                                </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="67.0" text="Cart ID:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="cartLabel" alignment="CENTER" layoutX="82.0" layoutY="10.0" prefHeight="25.0" prefWidth="31.0" text="122">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Label fx:id="customerLabel" alignment="CENTER" layoutX="56.0" layoutY="106.0" prefHeight="25.0" prefWidth="141.0" text="Customer ID:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="itemLabel" alignment="CENTER" layoutX="56.0" layoutY="136.0" prefHeight="25.0" prefWidth="141.0" text="Item ID:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="qtyLabel" alignment="CENTER" layoutX="56.0" layoutY="166.0" prefHeight="25.0" prefWidth="141.0" text="Quantity:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="paymentLabel" alignment="CENTER" layoutX="56.0" layoutY="196.0" prefHeight="25.0" prefWidth="141.0" text="Payment Method:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                            </children>
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </VBox>
+                        <TableView fx:id="orderTable" onMouseReleased="#getItem" prefHeight="477.0" prefWidth="612.0" HBox.hgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="cartCol" minWidth="52.0" prefWidth="52.0" text="Cart ID" />
+                                <TableColumn fx:id="numberCol" prefWidth="77.0" text="Customer ID" />
+                                <TableColumn fx:id="itemCol" prefWidth="53.0" text="Item ID" />
+                                <TableColumn fx:id="qtyCol" prefWidth="58.0" text="Quantity" />
+                                <TableColumn fx:id="orderedCol" minWidth="1.0" prefWidth="88.0" text="Date Ordered" />
+                                <TableColumn fx:id="completedCol" minWidth="100.0" prefWidth="116.0" text="Date Completed" />
+                        <TableColumn fx:id="typeCol" minWidth="72.0" prefWidth="93.0" text="Payment Type" />
+                            </columns>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </TableView>
+                    </children>
+                </HBox>
+                <HBox alignment="TOP_CENTER" prefHeight="59.0" prefWidth="780.0" spacing="10.0">
+                    <children>
+                        <Button fx:id="completeButton" mnemonicParsing="false" onAction="#completeOnAction" prefHeight="25.0" prefWidth="126.0" text="Complete Order" />
+                        <Button fx:id="cancelOrder" mnemonicParsing="false" onAction="#cancelOnAction" prefHeight="25.0" prefWidth="94.0" text="Cancel Order" />
+                        <Button fx:id="adminPanelButton" mnemonicParsing="false" onAction="#adminPanelButtonOnAction" prefHeight="25.0" prefWidth="166.0" text="Return To Admin Panel" />
+                    </children>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <padding>
+                        <Insets top="10.0" />
+                    </padding>
+                </HBox>
+                <Label fx:id="statusLabel" alignment="CENTER" prefHeight="17.0" prefWidth="441.0" />
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

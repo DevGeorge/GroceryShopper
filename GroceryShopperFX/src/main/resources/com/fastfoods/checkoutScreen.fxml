@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fastfoods.CheckoutController">
+   <children>
+      <SplitPane cache="true" dividerPositions="0.40601503759398494" focusTraversable="true" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <VBox fx:id="checkoutBox" alignment="TOP_CENTER" prefHeight="600.0" prefWidth="300.0" spacing="20.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <Label alignment="CENTER" minWidth="60.0" prefHeight="49.0" prefWidth="300.0" style="&#10;" text="Checkout" textAlignment="CENTER" underline="true" wrapText="false">
+                     <font>
+                        <Font size="18.0" fx:id="x1" />
+                     </font>
+                  </Label>
+                  <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearButtonOnAction" prefHeight="25.0" prefWidth="300.0" text="Clear Cart" />
+                  <VBox alignment="CENTER" prefWidth="300.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="0.0" prefWidth="300.0" text="Shipping to:" underline="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="11.0" prefWidth="300.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="firstNameField" text="First Name">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lastNameField" text="Last Name">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Label fx:id="streetLabel" alignment="CENTER" prefHeight="5.0" prefWidth="300.0" text="street">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <HBox prefHeight="9.0" prefWidth="300.0">
+                           <children>
+                              <Label fx:id="cityLabel" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="300.0" text="City">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="300.0" text=", BC">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <Label fx:id="postalLabel" alignment="CENTER" prefHeight="0.0" prefWidth="300.0" text="postal">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="75.0" text="Total: $">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totalLabel" alignment="CENTER" prefHeight="32.0" prefWidth="79.0">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="300.0" text="Pay using:">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="27.0" prefWidth="300.0" spacing="5.0">
+                     <children>
+                        <RadioButton fx:id="visaRadio" mnemonicParsing="false" text="Visa" />
+                        <RadioButton fx:id="masterRadio" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="MasterCard" />
+                        <RadioButton fx:id="cashRadio" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Cash" />
+                     </children>
+                  </HBox>
+                  <TextArea blendMode="EXCLUSION" editable="false" prefHeight="46.0" prefWidth="300.0" text="All payments will be taken by the driver on delivery" wrapText="true">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextArea>
+                  <Button fx:id="orderButton" alignment="CENTER" mnemonicParsing="false" onAction="#orderOnAction" prefHeight="44.0" prefWidth="300.0" text="Place Order" textAlignment="CENTER" underline="true">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="returnToProducts" layoutX="38.0" layoutY="500.0" mnemonicParsing="false" onAction="#returnToProductsOnAction" prefHeight="25.0" prefWidth="300.0" text="Return to Products" />
+                  <Label fx:id="statusLabel" alignment="CENTER" prefHeight="50.0" prefWidth="300.0" textAlignment="CENTER" textFill="#39da19">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </VBox>
+            <AnchorPane prefHeight="600.0" prefWidth="400.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="58.0" style="&#10;" text="Cart" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0" />
+                  <ScrollPane layoutX="68.0" layoutY="100.0" prefHeight="478.0" prefWidth="318.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="68.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0">
+                     <content>
+                        <GridPane fx:id="grid" alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

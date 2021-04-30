@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="706.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.fastfoods.RegisterController">
+    <children>
+        <Pane layoutY="40.0" prefHeight="605.0" prefWidth="600.0">
+            <children>
+                <AnchorPane layoutY="-32.0" minHeight="0.0" minWidth="0.0" prefHeight="849.0" prefWidth="616.0">
+                    <children>
+                        <Label layoutX="26.0" layoutY="192.0" prefHeight="18.0" prefWidth="132.0" text="First Name:">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="26.0" layoutY="247.0" prefHeight="30.0" prefWidth="132.0" text="Last Name:">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="26.0" layoutY="303.0" prefHeight="30.0" prefWidth="132.0" text="Email:">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="26.0" layoutY="506.0" prefHeight="35.0" prefWidth="165.0" text="Password:">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="26.0" layoutY="556.0" prefHeight="30.0" prefWidth="200.0" text="Confirm Password">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="163.0" layoutY="66.0" prefHeight="74.0" prefWidth="239.0" text="Register for Account" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+                            <font>
+                                <Font size="26.0" />
+                            </font>
+                            <effect>
+                                <Glow level="0.41" />
+                            </effect>
+                        </Label>
+                        <Label layoutX="26.0" layoutY="356.0" prefHeight="30.0" prefWidth="132.0" text="Address:">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="firstNameField" layoutX="231.0" layoutY="194.0" prefHeight="30.0" prefWidth="350.0" promptText="First" />
+                        <TextField fx:id="lastNameField" layoutX="231.0" layoutY="249.0" prefHeight="30.0" prefWidth="350.0" promptText="Last" />
+                        <TextField fx:id="emailField" layoutX="231.0" layoutY="305.0" prefHeight="30.0" prefWidth="350.0" promptText="email@address.com" />
+                        <TextField fx:id="addressField" layoutX="231.0" layoutY="358.0" prefHeight="30.0" prefWidth="350.0" promptText="Street Number and Name" />
+                        <TextField fx:id="cityField" layoutX="231.0" layoutY="410.0" prefHeight="30.0" prefWidth="350.0" promptText="City" />
+                        <TextField fx:id="postalCodeField" layoutX="231.0" layoutY="462.0" prefHeight="30.0" prefWidth="350.0" promptText="A1A1A1 - Format for postalcode" />
+                        <PasswordField fx:id="setPasswordField" layoutX="231.0" layoutY="508.0" prefHeight="30.0" prefWidth="350.0" promptText="Password" />
+                        <PasswordField fx:id="confirmPasswordField" layoutX="231.0" layoutY="556.0" prefHeight="30.0" prefWidth="350.0" promptText="Password" />
+                        <Button fx:id="confirmButton" layoutX="32.0" layoutY="642.0" mnemonicParsing="false" onAction="#confirmButtonOnAction" prefHeight="35.0" prefWidth="250.0" text="Confirm" />
+                        <Button fx:id="closeButton" layoutX="331.0" layoutY="642.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="35.0" prefWidth="250.0" text="Close" />
+                        <Label layoutX="26.0" layoutY="460.0" prefHeight="35.0" prefWidth="143.0" text="Postal Code:">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="26.0" layoutY="407.0" prefHeight="30.0" prefWidth="132.0" text="City:">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="statusLabel" layoutX="133.0" layoutY="614.0" prefHeight="17.0" prefWidth="350.0" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

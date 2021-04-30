@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="640.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fastfoods.ItemEditorController">
+    <children>
+        <VBox alignment="CENTER" prefHeight="640.0" prefWidth="1240.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="271.0" text="Items">
+                      <font>
+                          <Font size="35.0" />
+                      </font>
+                  </Label>
+                <HBox prefHeight="481.0" prefWidth="743.0">
+                    <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="472.0" prefWidth="307.0" spacing="5.0">
+                            <children>
+                                <TextField fx:id="searchField" promptText="Search Field">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0" top="5.0" />
+                                    </VBox.margin>
+                                </TextField>
+                                <HBox alignment="CENTER" prefHeight="51.0" prefWidth="285.0" spacing="20.0">
+                                    <children>
+                                        <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchItemOnAction" text="Search" />
+                                        <Button fx:id="resetTable" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#updateTable" text="Reset Table" />
+                                    </children>
+                                </HBox>
+                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="285.0" text="Item Fields" underline="true">
+                                    <font>
+                                        <Font size="24.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="nameField" promptText="Name">
+                                    <VBox.margin>
+                                        <Insets top="5.0" />
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="descField" layoutX="10.0" layoutY="55.0" promptText="Description">
+                                    <VBox.margin>
+                                        <Insets top="3.0" />
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="typeField" layoutX="10.0" layoutY="83.0" promptText="Type">
+                                    <VBox.margin>
+                                        <Insets top="3.0" />
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="priceField" layoutX="10.0" layoutY="111.0" promptText="Price Enter number only!">
+                                    <VBox.margin>
+                                        <Insets top="3.0" />
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="stockField" layoutX="10.0" layoutY="136.0" promptText="Amount of stock">
+                                    <VBox.margin>
+                                        <Insets top="3.0" />
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="pathField" layoutX="10.0" layoutY="161.0" promptText="Img Path (Use &quot;noImage.png&quot; for no image)">
+                                    <VBox.margin>
+                                        <Insets top="3.0" />
+                                    </VBox.margin>
+                                </TextField>
+                                <Label alignment="CENTER" prefHeight="31.0" prefWidth="288.0" text="Selected Item ID:">
+                                    <font>
+                                        <Font size="21.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="idLabel" alignment="CENTER" prefHeight="28.0" prefWidth="51.0" textFill="#1a00ff">
+                                    <font>
+                                        <Font size="22.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </VBox>
+                        <TableView fx:id="itemTable" onMouseReleased="#getItem" prefHeight="472.0" prefWidth="701.0" HBox.hgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="idCol" prefWidth="52.0" text="ID" />
+                                <TableColumn fx:id="nameCol" prefWidth="154.0" text="Name" />
+                                <TableColumn fx:id="descCol" prefWidth="352.0" text="Description" />
+                                <TableColumn fx:id="typeCol" prefWidth="111.0" text="Type" />
+                                <TableColumn fx:id="priceCol" minWidth="1.0" prefWidth="59.0" text="Price: $" />
+                                <TableColumn fx:id="stockCol" prefWidth="61.0" text="Stock" />
+                                <TableColumn fx:id="pathCol" prefWidth="73.0" text="Img_path" />
+                            </columns>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </TableView>
+                    </children>
+                </HBox>
+                <HBox alignment="TOP_CENTER" prefHeight="59.0" prefWidth="780.0" spacing="10.0">
+                    <children>
+                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#addItemOnAction" prefHeight="25.0" prefWidth="126.0" text="Add" />
+                        <Button fx:id="updateButton" mnemonicParsing="false" onAction="#updateItemOnAction" prefHeight="25.0" prefWidth="94.0" text="Update" />
+                        <Button fx:id="adminPanelButton" mnemonicParsing="false" onAction="#adminPanelButtonOnAction" prefHeight="25.0" prefWidth="166.0" text="Return To Admin Panel" />
+                    </children>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <padding>
+                        <Insets top="10.0" />
+                    </padding>
+                </HBox>
+                <Label fx:id="statusLabel" alignment="CENTER" prefHeight="17.0" prefWidth="441.0" />
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>
